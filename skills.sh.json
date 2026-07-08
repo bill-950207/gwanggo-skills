@@ -1,0 +1,11 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "gwanggo",
+      "description": "Generate advertising images and videos with gwanggo AI from any coding agent.",
+      "skills": ["gwanggo-generate", "gwanggo-product-ad", "gwanggo-social-video"]
+    }
+  ]
+}
