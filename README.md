@@ -5,16 +5,13 @@ Agent skills for generating advertising **images and videos** with [gwanggo AI](
 ## Install
 
 ```bash
+npm install -g https://github.com/bill-950207/gwanggo-mcp/archive/refs/heads/master.tar.gz
+gwanggo auth login
 npx skills add bill-950207/gwanggo-skills
 ```
 
-Then set your API key (get one at https://gwanggo.jocoding.io/dashboard/api-keys):
-
-```bash
-export GWANGGO_API_KEY=gwk_xxxxxxxx
-```
-
-Now ask your agent, or invoke a skill directly:
+Approve the browser prompt once. The skills then reuse the CLI's saved login. No API-key
+environment variable is required. Ask your agent, or invoke a skill directly:
 
 ```
 /gwanggo-generate
@@ -30,8 +27,9 @@ Now ask your agent, or invoke a skill directly:
 
 ## How it works
 
-The skills call the gwanggo REST API (`https://gwanggo.jocoding.io/api/v1`) with your
-`GWANGGO_API_KEY`. Credits are charged on submit and **auto-refunded** if a job fails.
+The skills call the `gwanggo` CLI. The CLI uses the account saved by `gwanggo auth login`,
+submits to the gwanggo API, and waits for the result. Credits are charged on submit and
+**auto-refunded** if a job fails.
 
 Prefer a hosted connection with no key? gwanggo also runs a **remote MCP server** —
 add `https://gwanggo.jocoding.io/api/v1/mcp` as a custom connector in Claude or ChatGPT
